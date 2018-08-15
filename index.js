@@ -8,6 +8,12 @@ app.get('/', function(request, response) {
   response.send('Hello World!')
 })
 
+// routes will go here
+app.get('/api/users', function(req, res) {
+  var name = req.param('name');
+  res.send(name);
+});
+
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
 })
